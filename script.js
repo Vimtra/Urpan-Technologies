@@ -95,8 +95,8 @@ document.addEventListener('DOMContentLoaded', function () {
         themeToggleBtn.checked = savedTheme === 'dark-theme'; // Set the slider position based on the saved theme
         
         // Change logo based on saved theme
-        logoimg.src = savedTheme === 'dark-theme' ? '/logo/logo-white.png' : '/logo/logo-black.png';
-        logoImg.src = savedTheme === 'dark-theme' ? '/logo/logo-white.png' : '/logo/logo-black.png';
+        logoimg.src = savedTheme === 'dark-theme' ? './logo/logo-white.png' : './logo/logo-black.png';
+        logoImg.src = savedTheme === 'dark-theme' ? './logo/logo-white.png' : './logo/logo-black.png';
     } else {
         document.body.classList.add('light-theme'); // Default to light theme if no preference is saved
         logoimg.src = './logo/logo-black.png'; // Set default logo
