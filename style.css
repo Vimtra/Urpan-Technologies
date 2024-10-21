@@ -1,0 +1,1054 @@
+/* Base styles */
+:root {
+    /* Light Theme Colors */
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --navbar-bg-color: rgba(255, 255, 255, 0.8);
+    --navbar-text-color: #0c0c0c;
+    --navbar-hover-color: rgba(128, 0, 128, 0.8);
+    --box-shadow-color: rgba(0, 0, 0, 0.2);
+    --bs-btn-color: #000000;
+    --bs-btn-border-color: #000000;
+    --card-bg-color:rgba(255, 255, 255, 0.8);
+    --card-box-shadow-color:black;
+    --soft-box-shadow-color:0 0px 12px rgba(0, 0, 0, 0.15);
+    --strong-bow-shadow-color: 0 0px 15px rgba(0, 0, 0, 0.2);
+    --bg-gradient-background:linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(128, 0, 128, 0));
+
+  }
+  
+  /* Dark Theme Colors */
+  body.dark-theme {
+    --background-color: #222222;
+    --text-color: #f1f1f1;
+    --navbar-bg-color: rgba(34, 34, 34, 0.541);
+    --navbar-text-color: #ffffff;
+    --navbar-hover-color: rgba(128, 0, 128, 0.8);
+    --box-shadow-color: rgba(110, 110, 110, 0.6);
+    --bs-btn-color: #ffffff;
+    --bs-btn-border-color: #ffffff;
+    --card-bg-color:rgba(128, 0, 128, 0.8);
+    --card-box-shadow-color:white;
+    --soft-box-shadow-color:0 0px 12px rgba(0, 0, 0, 0.15);
+    --soft-box-shadow-color:0 0px 12px rgba(255, 255, 255, 0.568);
+    --strong-bow-shadow-color: 0 0px 15px rgb(255, 255, 255);
+    --bg-gradient-background:linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(128, 0, 128, 0));
+
+  }
+
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s ease;
+  }
+
+/* Header Styles */
+.logo {
+  height: 50px; /* Adjust the height based on your design */
+  width: auto; /* Keep the aspect ratio intact */
+  transition: all 0.3s ease-in-out;
+}
+nav.navbar {
+    background-color: var(--navbar-bg-color);
+    padding: 15px 30px;
+    position: fixed; /* Fixed at the top */
+    top: 20px; /* Floating effect */
+    left: 50%;
+    transform: translateX(-50%); /* Center the navbar horizontally */
+    width: 90%; /* Control the width to not take full space */
+    max-width: 1200px; /* Limit the max width */
+    border-radius: 20px; /* Rounded edges */
+    box-shadow: 0 0 16px var(--box-shadow-color); /* Box shadow for floating effect */
+    z-index: 1000;
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between logo and links */
+    backdrop-filter: blur(8px); /* Apply the blur effect */
+    -webkit-backdrop-filter: blur(8px); /* Support for older browsers */
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for shadow */
+  }
+  
+  nav.navbar .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--navbar-text-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    letter-spacing: 2px;
+  }
+
+  .nav-links {
+    list-style: none; /* Remove default list styling */
+    display: flex; /* Flexbox for horizontal alignment */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+  .nav-links a {
+    color: #333; /* Font color */
+    text-decoration: none; /* Remove underline */
+    padding: 15px 20px; /* Add padding for spacing */
+    display: inline-block; /* Ensure links are inline */
+}
+  nav.navbar .navbar-brand:hover {
+    color: var(--navbar-hover-color); /* Hover effect for logo */
+  }
+  
+  nav.navbar .navbar-nav .nav-link {
+    color: var(--navbar-text-color);
+    font-size: 1.1rem;
+    padding: 0 15px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  nav.navbar .navbar-nav .nav-link:hover {
+    color: var(--navbar-hover-color); /* Hover effect for nav links */
+  }
+  
+  .navbar-toggler {
+    border-color:var(--text-color);
+  }
+  
+  .navbar-toggler-icon {
+    color: var(--bs-btn-color);
+  }
+  
+  /* Sticky Header on Scroll */
+  .sticky .logo {
+    height: 50px; /* Maintain the same logo size in sticky state */
+  }
+  .sticky {
+    padding: 15px 30px; /* Keep the padding same as in normal state */
+    background-color: var(--navbar-bg-color); /* Solid background when scrolled */
+    box-shadow: 0 12px 24px var(--box-shadow-color); /* Stronger shadow when sticky */
+    top: 0px; /* Remove gap when sticky */
+    left: 0;
+    width: 100%;
+    height: 90px;
+    border-radius: 0; /* Remove rounded corners when sticky */
+  }
+  
+  .sticky .navbar-brand, 
+  .sticky .nav-link {
+    color: #ffffff;
+  }
+  
+  .sticky .navbar-nav .nav-link:hover {
+    /* color: #ff4c4c; */
+  }
+  
+  nav .button .btn-outline-light{
+    color: var(--bs-btn-color);
+  }
+
+/* theme slider   */
+/* Theme toggle switch container */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.theme-toggle input[type="checkbox"] {
+  display: none; /* Hide default checkbox */
+}
+
+.theme-toggle label {
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide the default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #3a3a3a; /* Color when slider is active (theme toggled) */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px); /* Move the slider to the right when checked */
+}
+
+
+
+    /* Hero Section Parallax Effect */
+/* Hero Section Styling */
+.hero-section {
+  position: relative;
+  /* padding: 100px 0; */
+  padding: 150px 0 0 0; /*Add more padding at the top to bring it down*/
+  background-image: url('path-to-your-parallax-background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  overflow: hidden; /* Ensure content doesn’t overflow */
+  color: var(--text-color);
+  text-align: left;
+  z-index: 1;
+  background-color: var(--background-color);
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Overlay for better text visibility */
+  z-index: -1;
+}
+
+.hero-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /* background-color: var(--background-color); */
+  color: var(--text-color);
+
+}
+
+.hero-subheading {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  /* background-color: var(--background-color); */
+  color: var(--text-color);
+}
+
+.cta-buttons .btn {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.cta-buttons .btn-primary {
+  background-color: rgb(128, 0, 128);
+  border-color: rgb(128, 0, 128);
+}
+
+.cta-buttons .btn-outline-light {
+  border-color: var(--text-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+.cta-buttons .btn-outline-light:hover{
+  /* color: black; */
+}
+
+.cta-buttons .btn:hover {
+  transform: scale(1.05);
+}
+
+
+
+
+.hero-image {
+  max-width: 110%;
+  height: auto;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.mouse-track-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Disable mouse interactions on layers */
+  z-index: -1;
+}
+.svg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+#layer1 {
+  background: url('path-to-layer1-image.png') no-repeat center;
+  background-size: cover;
+  opacity: 0.5; /* Adjust opacity for effect */
+}
+
+#layer2 {
+  background: url('path-to-layer2-image.png') no-repeat center;
+  background-size: cover;
+  opacity: 0.3;
+}
+
+#layer3 {
+  background: url('path-to-layer3-image.png') no-repeat center;
+  background-size: cover;
+  opacity: 0.2;
+}
+#particleCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure canvas is behind content */
+  /* Match the hero section background */
+  background-color: var(--background-color);
+  transition: all 0.3s ease;
+  /* color: var(--text-color); */
+}
+  
+      .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+      }
+  
+/* Services Section */
+.services-section {
+  padding: 100px 0;
+  background-color: var(--background-color); /* Background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.services-title h1 {
+  font-size: 150px;
+  font-weight: bold;
+  position: relative;
+  color: var(--text-color); /* Light grey for background text */
+  margin: 0;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+.services-cards .service-card {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.8s ease-out;
+}
+
+.services-cards .card {
+  background-color: #f5f5f5; /* Light card background */
+  border: none;
+  border-radius: 10px;
+  box-shadow: var(--soft-box-shadow-color); /* Softer shadow */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.services-cards .card:hover {
+  transform: scale(1.05);
+  box-shadow: var(--strong-bow-shadow-color); /* Stronger shadow on hover */
+}
+
+.services-cards .card-body {
+  padding: 20px;
+}
+
+.services-cards .card-title {
+  font-size: 24px;
+  color: #333; /* Dark text for titles */
+  margin-bottom: 15px;
+}
+
+.services-cards .card-text {
+  font-size: 16px;
+  color: #555; /* Softer text color */
+}
+
+/* Scroll-triggered animations */
+.scrolled-down .services-title h1,
+.scrolled-down .services-cards .service-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scrolled-up .services-title h1,
+.scrolled-up .services-cards .service-card {
+  opacity: 0;
+  transform: translateY(100px);
+}
+/* Services Cards Initial State (Completely Hidden) */
+.services-cards .service-card {
+  opacity: 0;
+  /* Hides the cards and prevents them from taking space */
+  /* visibility: hidden;  */
+  transform: translateX(-100%); /* Off-screen to the right */
+  transition: all 0.5s ease-out;
+}
+
+/* When scrolled down, cards become visible and slide in */
+.scrolled-down .services-cards .service-card {
+  opacity: 1;
+  visibility: visible; /* Cards appear in the layout */
+  transform: translateX(0); /* Slide into view */
+}
+
+/* Staggered delay for each card */
+.services-cards .service-card:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.services-cards .service-card:nth-child(2) {
+  transition-delay: 0.4s;
+}
+
+.services-cards .service-card:nth-child(3) {
+  transition-delay: 0.6s;
+}
+
+.services-cards .service-card:nth-child(4) {
+  transition-delay: 0.8s;
+}
+
+.services-cards .service-card:nth-child(5) {
+  transition-delay: 1s;
+}
+
+.services-cards .service-card:nth-child(6) {
+  transition-delay: 1.2s;
+}
+
+/* Scroll Up Effect (Hide the cards again) */
+.scrolled-up .services-cards .service-card {
+  opacity: 0;
+  /* Cards disappear completely */
+  /* visibility: hidden;  */
+  transform: translateX(28%); /* Move off-screen */
+}
+
+
+
+  
+      /* Why Choose Us Section */
+      .why-choose-us {
+        background-color: var(--background-color);
+        padding: 60px 0;
+        transition: all 0.3s ease;
+
+      }
+  
+      /* Clients Section */
+      .clients {
+        padding: 60px 0;
+        transition: all 0.3s ease;
+      }
+  
+      .clients img {
+        max-width: 150px;
+        margin: 15px;
+      }
+
+/* career */
+
+.career-section{
+  /* position:absolute; */
+  margin-top: 160px;
+}
+.dropdown {
+  /* Position relative to parent */
+  position: relative;
+}
+
+.dropdown-content {
+  /* Hide dropdown by default */
+  display: none;
+  position: absolute; /* Positioning below the dropdown link */
+  background-color: white; /* Background color of dropdown */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  z-index: 1; /* Ensure it appears above other elements */
+}
+
+.dropdown:hover .dropdown-content {
+  /* Show dropdown on hover */
+  display: block; 
+}
+
+.dropdown-content li {
+  list-style: none; /* Remove default list styling */
+}
+
+/* Dropdown Links Style */
+.dropdown-content a {
+  color: #333; /* Match the font color with other links */
+  text-decoration: none; /* Remove underline */
+  padding: 10px 20px; /* Padding for dropdown items */
+  display: block; /* Make the whole area clickable */
+}
+
+/* Hover Effect for Dropdown Links */
+.dropdown-content a:hover {
+  /* Background color on hover */
+  /* background-color: #007bff;  */
+  color: white; /* Change text color on hover */
+}
+#careerHeading {
+  font-size: 10rem; /* Increase heading size */
+  color: var(--text-color); /* Heading color */
+  margin-top: 20px; /* Spacing from the top */
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Text shadow for effect */
+}
+
+.job-card {
+  /* Pointer cursor for job cards */
+  cursor: pointer;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  max-width: auto;
+}
+
+.job-card:hover {
+  background-color: #e9ecef; /* Change background on hover */
+}
+#jobList{
+  /* max-width: 17rem; */
+  display: flex;
+  align-items: center;
+}
+#jobTitle{
+  padding: 10px 0;
+  text-transform:uppercase ;
+}
+#jobInfo, #jobList {
+  margin-top: 20px; /* Spacing from job listings */
+  /* margin-left: 20px; */
+}
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+
+/* contact html */
+#contact{
+  margin-top: 100px;
+}
+.map-container {
+  overflow: hidden;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  position: relative;
+  height: 0;
+}
+
+.map-container .iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+h2, h4 {
+  color: var(--text-color);
+}
+
+.contact-detail li{
+  color: var(--text-color);
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Space between list items, adjust as needed */
+}
+.contact-detail i {
+  margin-right: 20px; /* Space between icon and text, adjust as needed */
+  font-size: 1.2rem; /* Adjust icon size if needed */
+}
+
+
+/* services page */
+/* Service section */
+#service h1{
+  margin-top: 100px;
+  font-size: 10rem;
+}
+.service {
+  opacity: 1;
+  transform: translateY(50px);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.service h1{
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-color);
+}
+.service h2{
+  font-size: 2rem;
+  color: var(--text-color);
+}
+.service p{
+  font-size: 1.2rem;  
+  color: var(--text-color);
+  text-align: justify;
+  
+}
+/* To animate the services as they scroll into view */
+.service.visible {
+  opacity: 0;
+  transform: translateY(0);
+}
+
+/* Service Image Styling */
+.service-img {
+  width: 100%;
+  max-width: 250px;
+}
+
+
+/* about page */
+/* Hero Section */
+.about-hero {
+  background-image: url('path_to_hero_image.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+  padding: 150px 0 10px 0;
+  color: var(--text-color);
+}
+
+.hero-content h1 {
+  font-size: 10rem;
+  margin-bottom: 10px;
+}
+
+.who-we-are, .timeline, .meet-the-team, .testimonials, .call-to-action {
+  padding: 50px 0;
+}
+
+.who-we-are h2, .timeline h2, .meet-the-team h2, .testimonials h2, .call-to-action h3 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#mission-vision-values .card {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+#mission-vision-values .card:hover {
+  transform: scale(1.05); /* Scale up on hover */
+}
+
+#mission-vision-values .card-img {
+  width: auto;
+  max-height: 200px;
+  margin: 0 auto;
+  transition: opacity 0.3s ease;
+}
+
+#mission-vision-values .hover-text {
+  position: absolute;
+  bottom: 0; /* Position at the bottom */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 40px;
+  flex-direction: column;
+  /* Align text to bottom */
+  justify-content: flex-end; 
+  align-items: center;
+  /* text-align: justify; */
+  /* Gradient background */
+  /* background: linear-gradient(to top, rgba(128, 0, 128, 0.8), rgba(128, 0, 128, 0.164)); */
+  background: var(--bg-gradient-background);
+  color: white;
+  opacity: 0; /* Start hidden */
+  transform: translateY(30px); /* Start below */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for opacity and position */
+}
+
+#mission-vision-values .hover-card:hover .hover-text {
+  opacity: 1; /* Show text on hover */
+  transform: translateY(0); /* Slide up to original position */
+}
+
+#mission-vision-values .hover-card:hover .card-img {
+  opacity: 0.3; /* Fade image on hover */
+}
+
+#mission-vision-values h4 {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+
+
+.timeline-list {
+  list-style: none;
+  padding: 0;
+}
+
+.timeline-list li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+  font-size: 1.2rem;
+}
+
+.timeline-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 5px;
+  height: 10px;
+  width: 10px;
+  background-color: rgb(128, 0, 128);
+  border-radius: 50%;
+}
+
+.team-member img {
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.carousel {
+  /* Add your carousel styles here */
+}
+
+
+#missionVisionValues {
+  position: relative;
+}
+
+.mission-card, .vision-card, .values-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.mission-card:hover, .vision-card:hover, .values-card:hover {
+  transform: scale(1.05);
+}
+
+.card-img {
+  width: 60%;
+  height: auto;
+  /* display: block; */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Gradient background */
+  /* background: linear-gradient(to top, rgba(128, 0, 128, 0.8), rgba(128, 0, 128, 0));  */
+  /* background: var(--bg-gradient-background); */
+  background-color: var(--text-color);
+  color: white;
+  border-radius: 10px;
+  /* border-style:groove; */
+  opacity: 0;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  color: var(--background-color);
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.7s ease;
+}
+
+.mission-card:hover .overlay, 
+.vision-card:hover .overlay, 
+.values-card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.overlay p {
+  margin-top: 5px;
+}
+
+
+
+.call-to-action {
+  background-color: rgba(128, 0, 128, 0.8);
+  color: white;
+}
+.call-to-action .btn{
+  background-color: rgba(128, 0, 128,);
+}
+/* Fade-in effect */
+.fade-in-section {
+  opacity: 1;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  color: var(--text-color);
+}
+
+.fade-in-section.visible {
+  opacity: 0;
+  transform: translateY(0);
+}
+
+.button-54 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(128, 0, 128);
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-54:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  .button-54 {
+    padding: 0.25em 0.75em;
+  }
+}
+
+/* Parallax hero section */
+.about-hero {
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  transition: background-position 0.2s ease-out;
+}
+
+/* Team member hover effect */
+.team-member img {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+
+
+
+
+/* Footer */
+/* first footer */
+.footer-main{
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+.footer-main img{
+  max-width: auto;
+  height: 8rem;
+}
+.footer-main ul li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.quick-links{
+  /* align-items: center; */
+  /* transform: translateX(30%); */
+  padding-left: 130px;
+
+}
+.quick-links h5{
+  font-size: 1.5rem;
+}
+.quick-links li{
+  width: 30%;
+}
+.footer-main ul li i {
+  color: var(--text-color);
+  margin-right: 10px;
+}
+
+.footer-main ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.footer-main ul li a:hover {
+  color: rgb(128, 0, 128);
+  /* font-weight: 600; */
+  transition: color 0.3s ease-in-out;
+}
+
+
+
+/* second footer */
+.second-footer {
+  background-color: #343a40;
+  color: white;
+  padding: 20px 0 10px 0;
+  position:static;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .nav-links {
+      flex-direction: column; /* Stack links vertically on small screens */
+      gap: 10px; /* Space between links */
+  }
+  nav.navbar{
+    transform: none;
+    width: 74%;
+    left: 1%;
+    padding:5px 10px;
+  }
+  .nav-links a{
+    padding: 0;
+  }
+  #careerHeading{
+    font-size: 190%;
+  }
+  .services-title h1{
+    font-size: 4.2rem;
+    margin:0 0 30px 0;
+  }
+  .hero-section h1, p, a{
+    scale: 80%;
+
+  }
+  .quick-links{
+    padding: 0;
+  }
+  #service h1{
+    font-size: 2.5rem;
+  }
+  .service h2{
+    font-size: 1.5rem;
+  }
+  .service p{
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-links {
+    flex-direction: column; /* Stack links vertically on small screens */
+    gap: 10px; /* Space between links */
+  }
+  nav.navbar{
+    transform: none;
+    width: 74%;
+    left: 1%;
+    padding:5px 10px;
+  }
+  .nav-links a{
+    padding: 0;
+  }
+  h1 {
+      font-size: 2rem; /* Further reduce heading size */
+      text-align: center; /* Ensure h1 is centered on mobile */
+  }
+  h2 {
+      font-size: 1.25rem; /* Adjust h2 for mobile */
+      text-align: center;
+  }
+  p {
+      font-size: 0.9rem; /* Reduce paragraph font size for better readability */
+      text-align: center; /* Center text on mobile for better flow */
+  }
+
+  /* Service Card */
+  #service{
+    width: 430px;
+  }
+  .service {
+      padding: 10px 0; /* Add some padding for better spacing on mobile */
+  }
+
+  .service-img {
+      max-width: 120px; /* Further reduce image size for smaller screens */
+  }
+
+  /* Adjust column stacking */
+  .service .col-md-6 {
+      text-align: justify; /* Center the text and image for mobile */
+  }
+
+  /* Ensure alternating order works well on mobile */
+  .order-md-2 {
+      order: 1;
+  }
+  .order-md-1 {
+      order: 2;
+  }
+}

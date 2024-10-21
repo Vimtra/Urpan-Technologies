@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urpan Technologies</title>
+  <link rel="icon" href="logo/logo.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+
+<body>
+
+  <!-- Header with Logo and Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="logo/logo-black.png" alt="Logo" class="logo" id="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact.html">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <label for="Jobs">
+              <a class="nav-link dropdown-toggle" href="/Career.html" id="careerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Career
+              </a>
+              <ul class="dropdown-menu" id="dropdownMenu" aria-labelledby="careerDropdown">
+                  <!-- Dropdown items will be populated here -->
+              </ul>
+            </label>
+          </li>
+          <!-- Theme Switch Button -->
+          <!-- <button id="themeToggle" class="btn btn-outline-light ms-3">Dark Mode</button> -->
+          <!-- <div class="theme-toggle"> -->
+          <li class="themeToggle">
+            <label class="switch">
+              <input type="checkbox" id="themeToggle">
+              <span class="slider"></span>
+            </label>
+          </li>
+          <!-- </div> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+<!-- Services Section -->
+<section id="service" class="py-5">
+  <div class="container">
+      <h1 class="text-center mb-5">Our Services</h1>
+
+      <!-- Service 1 -->
+      <div class="row mb-5 align-items-center service">
+          <div class="col-md-6 text-center">
+              <img src="images/Executive Search.png" alt="Executive Search" class="service-img img-fluid">
+          </div>
+          <div class="col-md-6">
+              <h2>Executive Search</h2>
+              <p>Right leadership is of paramount importance to drive business towards its vision. At UrpanTech, 
+                we partner in your growth by enabling you with right resources to fill key executive positions. 
+                Our executive search teams enable businesses to spot their next leader.</p>
+          </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="row mb-5 align-items-center service">
+          <div class="col-md-6 order-md-2 text-center">
+              <img src="images/Direct Hire Services.png" alt="Direct Hire Services" class="service-img img-fluid">
+          </div>
+          <div class="col-md-6 order-md-1">
+              <h2>Direct Hire Services</h2>
+              <p>Key resources are crucial for the smooth running of the business. Sourcing the right talent is both 
+                time consuming and resource intensive too. We enable organizations to identify, recruit and hire the
+                 right candidates for various positions in sync with their hiring strategy.</p>
+          </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="row mb-5 align-items-center service">
+          <div class="col-md-6 text-center">
+              <img src="images/IT Staffing.png" alt="IT Staffing" class="service-img img-fluid">
+          </div>
+          <div class="col-md-6">
+              <h2>IT Staffing</h2>
+              <p>The market for talented resources is highly competitive. The growth of cutting-edge technologies and 
+                the changing business scenario calls for IT talent with niche skills and domain knowledge. UrpanTech 
+                makes it possible to harness the right talent from the talent market.</p>
+          </div>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="row mb-5 align-items-center service">
+          <div class="col-md-6 order-md-2 text-center">
+              <img src="images/Temporary Staffing.png" alt="Temporary Staffing" class="service-img img-fluid">
+          </div>
+          <div class="col-md-6 order-md-1">
+              <h2>Temporary Staffing</h2>
+              <p>Resource needs of business may be planned, project or time-based. Identifying these requirements, 
+                our temporary staffing solutions enable you to scale-up or down your resource needs accordingly; we 
+                build your resource capacity easing you of the cost and management challenges.</p>
+          </div>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="row mb-5 align-items-center service">
+          <div class="col-md-6 text-center">
+              <img src="images/HR Consulting.png" alt="HR Consulting" class="service-img img-fluid">
+          </div>
+          <div class="col-md-6">
+              <h2>HR Consulting</h2>
+              <p>Leveraging talent resources is primal for enhancing business performance and growth. Through 
+                our HR consulting services, we enable businesses to optimize their HR operations with improved
+                 and innovative HR policies and practices with focus on the dynamic needs of the IT industry.</p>
+          </div>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="row mb-5 align-items-center service">
+          <div class="col-md-6 order-md-2 text-center">
+              <img src="images/Skill Enhancement Program.png" alt="Skill Enhancement Program" class="service-img img-fluid">
+          </div>
+          <div class="col-md-6 order-md-1">
+              <h2>Skill Enhancement Program</h2>
+              <p>Training and development of emerging technologies are decisive and give businesses an edge
+                 over the competition. UrpanTech partners with businesses and provides skill enhancement programs
+                 to empower their resources for optimal performance and to be future-ready.</p>
+          </div>
+      </div>
+
+  </div>
+</section>
+
+
+  
+
+  <!-- First Footer -->
+  <footer class="footer-main py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Left Part: Logo and Paragraph -->
+            <div class="col-md-4 col-12">
+                <img src="logo/logo-black.png" alt="Logo" class="mb-3 logo" id="Logo">
+                <p>UrpanTech has been providing staffing and recruitment services to businesses in the IT industry since 2000. As a reliable and resourceful organization, we aim to be your talent partner with the focus on your present and future business goals.</p>
+            </div>
+  
+            <!-- Middle Part: Links -->
+            <div class="col-md-4 quick-links">
+                <h5 class="mb-3">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/Career.html">Career</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+  
+            <!-- Right Part: Contact Information -->
+            <div class="col-md-4 footer-contact">
+              <h5 class="mb-3">Contact Us</h5>
+              <ul class="list-unstyled ">
+                  <li><i class="fas fa-map-marker-alt"></i> 39355 California Street, #303, Fremont, CA 94538</li>
+                  <li>
+                    <i class="fas fa-envelope"></i>
+                    <div class="email-links">
+                        <a href="mailto:info@urpantech.com" target="_blank">info@urpantech.com</a><br>
+                        <!-- <a href="mailto:secondemail@example.com" target="_blank">secondemail@example.com</a> -->
+                    </div>
+                  </li>
+                  <li><i class="fas fa-phone-alt"></i> +1 408-744-6750</li>
+              </ul>
+            </div>
+        </div>
+    </div>
+  </footer>
+  
+    <!-- Footer -->
+    <footer class="text-center second-footer">
+      <div class="container">
+        <p>&copy; UrpanTech | All Rights Reserved</p>
+      </div>
+    </footer>
+  
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="job.js"></script>
+  </body>
+  </html>

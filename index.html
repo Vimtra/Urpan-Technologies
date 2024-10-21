@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urpan Technologies</title>
+  <link rel="icon" href="logo/logo.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+
+<body>
+
+  <!-- Header with Logo and Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="logo/logo-black.png" alt="Logo" class="logo" id="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact.html">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <label for="Jobs">
+              <a class="nav-link dropdown-toggle" href="/Career.html" id="careerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Career
+              </a>
+              <ul class="dropdown-menu" id="dropdownMenu" aria-labelledby="careerDropdown">
+                  <!-- Dropdown items will be populated here -->
+              </ul>
+            </label>
+          </li>
+          <!-- Theme Switch Button -->
+          <!-- <button id="themeToggle" class="btn btn-outline-light ms-3">Dark Mode</button> -->
+          <!-- <div class="theme-toggle"> -->
+          <li class="themeToggle">
+            <label class="switch">
+              <input type="checkbox" id="themeToggle">
+              <span class="slider"></span>
+            </label>
+          </li>
+          <!-- </div> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Parallax Effect -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Left Column: Headline and Call to Action -->
+        <div class="col-lg-6">
+          <h1 class="hero-heading">Empowering Your Business with Top <br><span style="color: rgb(128, 0, 128);"> IT Talent</span></h1>
+          <p class="hero-subheading">Your Skills to Success Journey Begins Here. <br>
+                                    Your Step towards a great Career is just a Click Away..</p>
+          <div class="cta-buttons">
+            <a href="/services.html" class="btn btn-primary me-2">Get Started</a>
+            <a href="/about.html" class="btn btn-outline-light">Learn More</a>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="images/6308.png" alt="Tech Consulting" class="hero-image img-fluid">
+        </div>
+        <!-- Right Column: Dynamic Mouse Tracking Animation -->
+        <!-- Mouse tracking animation layers -->
+        <!-- <div class="col-lg-6">
+          <div class="mouse-track-layer svg-layer" id="layer1">
+            <svg width="100%" height="100%">
+              <circle cx="50%" cy="50%" r="100" fill="rgba(255, 0, 150, 0.5)" />
+            </svg>
+          </div>
+          <div class="mouse-track-layer svg-layer" id="layer2">
+            <svg width="100%" height="100%">
+              <rect x="25%" y="25%" width="150" height="150" fill="rgba(0, 204, 255, 0.5)" />
+            </svg>
+          </div>
+          <div class="mouse-track-layer svg-layer" id="layer3">
+            <svg width="100%" height="100%">
+              <polygon points="200,10 250,190 160,210" fill="rgba(128, 0, 255, 0.5)" />
+            </svg>
+          </div>
+        </div> -->
+      </div>
+      <canvas id="particleCanvas"></canvas>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+<section id="services" class="services-section">
+  <div class="container">
+      <div class="row">
+            <!-- Left Side - Our Services Title -->
+            <div class="col-md-6 services-title">
+                <h1>Our Services</h1>
+            </div>
+
+            <!-- Right Side - Service Cards -->
+            <div class="col-md-6 services-cards">
+                <div class="row">
+                    <!-- Card 1 -->
+                    <div class="col-md-6 mb-4 service-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Executive Search</h5>
+                                <p class="card-text">Right leadership is of paramount im..</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-md-6 mb-4 service-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Direct Hire Services</h5>
+                                <p class="card-text">Key resources are crucial for the smo..</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-md-6 mb-4 service-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">IT Staffing</h5>
+                                <p class="card-text">The market for talented resources is..</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="col-md-6 mb-4 service-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Temporary Staffing</h5>
+                                <p class="card-text">Resource needs of business may..</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="col-md-6 mb-4 service-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">HR Consulting</h5>
+                                <p class="card-text">Leveraging talent resources is pri..</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="col-md-6 mb-4 service-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Skill Enchancement Pr..</h5>
+                                <p class="card-text">Training and development of emer..</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <!-- Why Choose Us Section -->
+  <section class="why-choose-us text-center" id="whychooseus">
+    <div class="container">
+      <h2 class="section-title">Why Choose Us?</h2>
+      <p>With over 24 years of experience, we are leaders in IT consulting and implementation.</p>
+      <div class="row">
+        <div class="col-md-3">
+          <h3>24+ Years Experience</h3>
+        </div>
+        <div class="col-md-3">
+          <h3>4000+ Colsultants</h3>
+        </div>
+        <div class="col-md-3">
+          <h3>2500+ placements</h3>
+        </div>
+        <div class="col-md-3">
+          <h3>100+ Clients</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients Section -->
+  <!-- <section class="clients text-center">
+    <div class="container">
+      <h2 class="section-title">Our Clients</h2>
+      <div class="row">
+        <div class="col-12">
+          <img src="client1-logo.png" alt="Client 1">
+          <img src="client2-logo.png" alt="Client 2">
+          <img src="client3-logo.png" alt="Client 3">
+          <img src="client4-logo.png" alt="Client 4">
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+  <!-- First Footer -->
+<footer class="footer-main py-5">
+  <div class="container">
+      <div class="row">
+          <!-- Left Part: Logo and Paragraph -->
+          <div class="col-md-4">
+              <img src="logo/logo-black.png" alt="Logo" class="mb-3 logo" id="Logo">
+              <p>UrpanTech has been providing staffing and recruitment services to businesses in the IT industry since 2000. As a reliable and resourceful organization, we aim to be your talent partner with the focus on your present and future business goals.</p>
+          </div>
+
+          <!-- Middle Part: Links -->
+          <div class="col-md-4 quick-links">
+              <h5 class="mb-3">Quick Links</h5>
+              <ul class="list-unstyled">
+                  <li><a href="/index.html">Home</a></li>
+                  <li><a href="/about.html">About Us</a></li>
+                  <li><a href="/services.html">Services</a></li>
+                  <li><a href="/Career.html">Career</a></li>
+                  <li><a href="">Contact</a></li>
+              </ul>
+          </div>
+
+          <!-- Right Part: Contact Information -->
+          <div class="col-md-4 footer-contact">
+            <h5 class="mb-3">Contact Us</h5>
+            <ul class="list-unstyled ">
+                <li><i class="fas fa-map-marker-alt"></i> 39355 California Street, #303, Fremont, CA 94538</li>
+                <li>
+                  <i class="fas fa-envelope"></i>
+                  <div class="email-links">
+                      <a href="mailto:info@urpantech.com" target="_blank">info@urpantech.com</a><br>
+                      <!-- <a href="mailto:secondemail@example.com" target="_blank">secondemail@example.com</a> -->
+                  </div>
+                </li>
+                <li><i class="fas fa-phone-alt"></i> +1 408-744-6750</li>
+            </ul>
+          </div>
+      </div>
+  </div>
+</footer>
+
+  <!-- Footer -->
+  <footer class="text-center second-footer">
+    <div class="container">
+      <p>&copy; UrpanTech | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js" defer></script>
+  <script src="job.js" defer></script>
+</body>
+</html>

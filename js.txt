@@ -1,0 +1,79 @@
+const themeToggleBtn = document.getElementById('themeToggle');
+const body = document.body;
+const logo = document.getElementById('logo');
+
+// Check for previously saved theme in localStorage
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  body.classList.toggle('dark-theme', savedTheme === 'dark');
+  themeToggleBtn.textContent = savedTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+  logo.src = savedTheme === 'dark' ? 'logo/logo-white.png' : 'logo/logo-black.png';
+}
+
+// Theme toggle button click event
+themeToggleBtn.addEventListener('click', () => {
+  body.classList.toggle('dark-theme');
+  const isDarkTheme = body.classList.contains('dark-theme');
+  themeToggleBtn.textContent = isDarkTheme ? 'Light Mode' : 'Dark Mode';
+  
+  // Change logo based on theme
+  logo.src = isDarkTheme ? 'logo/logo-white.png' : 'logo/logo-black.png';
+  
+  // Save theme preference
+  localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+});
+
+  
+//mouse tracking
+document.addEventListener('mousemove', (e) => {
+  const layers = document.querySelectorAll('.mouse-track-layer');
+  const speedFactors = [15, 30, 45]; // Speed for each layer
+
+  layers.forEach((layer, index) => {
+    const speed = speedFactors[index];
+    const x = (window.innerWidth - e.pageX * speed) / 100;
+    const y = (window.innerHeight - e.pageY * speed) / 100;
+
+    layer.style.transform = `translate(${x}px, ${y}px)`;
+  });
+});
+
+
+1.if i  hover career in navbar drop down menu should appear which displays list of jobs that i posted.
+1.In career page i need the font and effects used in our services heading, let the career heading be in center.
+2.the jobs list should display in left side and each job should be in each card if i click the card a  complete detail about the job should appear in right side  after that a apply now button should appear at last of the job detail.
+3.In job detail i want posted date, job title, salary, working hours, experience, qualifications, job description, at last resume file upload button.
+
+
+<!-- HTML !-->
+<button class="button-54" role="button">Button 54</button>
+
+/* CSS */
+.button-54 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-54:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  .button-54 {
+    padding: 0.25em 0.75em;
+  }
+}
