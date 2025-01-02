@@ -14,6 +14,8 @@
     --soft-box-shadow-color:0 0px 12px rgba(0, 0, 0, 0.15);
     --strong-bow-shadow-color: 0 0px 15px rgba(0, 0, 0, 0.2);
     --bg-gradient-background:linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(128, 0, 128, 0));
+    --footer-background-color:rgba(0, 0, 0, 0.123);
+    --footer-text-color:rgb(0, 0, 0);
 
   }
   
@@ -33,13 +35,31 @@
     --soft-box-shadow-color:0 0px 12px rgba(255, 255, 255, 0.568);
     --strong-bow-shadow-color: 0 0px 15px rgb(255, 255, 255);
     --bg-gradient-background:linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(128, 0, 128, 0));
+    --footer-background-color:rgba(71, 71, 71, 0.265);
+    --footer-text-color:rgb(255, 255, 255);
 
   }
+  @font-face {
+    font-family: 'SF Pro Display';
+    src: url('Sofia\ Pro\ Black\ Az.otf') format('otf'),
+         url('Sofia\ Pro\ Bold\ Az.otf') format('otf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('Sofia\ Pro\ Black\ Az.otf') format('otf'),
+    url('Sofia\ Pro\ Bold\ Az.otf') format('otf');
+    font-weight: 700;
+    font-style: normal;
+}
 
   body {
     background-color: var(--background-color);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s ease;
+    cursor:default;
   }
 
 /* Header Styles */
@@ -96,6 +116,7 @@ nav.navbar {
   nav.navbar .navbar-nav .nav-link {
     color: var(--navbar-text-color);
     font-size: 1.1rem;
+    font-family: 'Nunito Sans', sans-serif;
     padding: 0 15px;
     transition: color 0.3s ease-in-out;
   }
@@ -266,7 +287,9 @@ input:checked + .slider:before {
   background-color: rgb(128, 0, 128);
   border-color: rgb(128, 0, 128);
 }
-
+.btn-primary:hover{
+  background-color: rgb(128, 0, 128);
+}
 .cta-buttons .btn-outline-light {
   border-color: var(--text-color);
   background-color: var(--background-color);
@@ -274,7 +297,7 @@ input:checked + .slider:before {
   transition: all 0.3s ease;
 }
 .cta-buttons .btn-outline-light:hover{
-  /* color: black; */
+  color: black;
 }
 
 .cta-buttons .btn:hover {
@@ -285,9 +308,12 @@ input:checked + .slider:before {
 
 
 .hero-image {
-  max-width: 110%;
+  max-width: 130%;
   height: auto;
+  transform: translateX(-120px);
+  /* padding-right: 120px; */
   animation: fadeInUp 1s ease-in-out;
+  transition: transfom 0.5s ease-in-out;
 }
 
 @keyframes fadeInUp {
@@ -347,6 +373,7 @@ input:checked + .slider:before {
   background-color: var(--background-color);
   transition: all 0.3s ease;
   /* color: var(--text-color); */
+  cursor: crosshair;
 }
   
       .section-title {
@@ -355,6 +382,7 @@ input:checked + .slider:before {
       }
   
 /* Services Section */
+/* homepage */
 .services-section {
   padding: 100px 0;
   background-color: var(--background-color); /* Background color */
@@ -363,14 +391,21 @@ input:checked + .slider:before {
   justify-content: center;
   transition: background-color 0.3s ease;
 }
-
+.ser{
+  -webkit-text-stroke: 2px var(--text-color);
+  -webkit-text-fill-color: transparent;
+}
+.ser:hover{
+  -webkit-text-fill-color: var(--text-color);
+}
 .services-title h1 {
   font-size: 150px;
-  font-weight: bold;
+  font-weight: 900;
   position: relative;
   color: var(--text-color); /* Light grey for background text */
   margin: 0;
   opacity: 0;
+  font-family: 'SF Pro Display';
   transform: translateY(50px);
   transition: all 1s ease-out;
 }
@@ -392,6 +427,7 @@ input:checked + .slider:before {
 .services-cards .card:hover {
   transform: scale(1.05);
   box-shadow: var(--strong-bow-shadow-color); /* Stronger shadow on hover */
+  cursor:copy;
 }
 
 .services-cards .card-body {
@@ -400,12 +436,14 @@ input:checked + .slider:before {
 
 .services-cards .card-title {
   font-size: 24px;
+  font-family: 'Poppins', sans-serif;
   color: #333; /* Dark text for titles */
   margin-bottom: 15px;
 }
 
 .services-cards .card-text {
   font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
   color: #555; /* Softer text color */
 }
 
@@ -477,8 +515,8 @@ input:checked + .slider:before {
       .why-choose-us {
         background-color: var(--background-color);
         padding: 60px 0;
+        color: var(--text-color);
         transition: all 0.3s ease;
-
       }
   
       /* Clients Section */
@@ -492,424 +530,20 @@ input:checked + .slider:before {
         margin: 15px;
       }
 
-/* career */
-
-.career-section{
-  /* position:absolute; */
-  margin-top: 160px;
-}
-.dropdown {
-  /* Position relative to parent */
-  position: relative;
-}
-
-.dropdown-content {
-  /* Hide dropdown by default */
-  display: none;
-  position: absolute; /* Positioning below the dropdown link */
-  background-color: white; /* Background color of dropdown */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-  z-index: 1; /* Ensure it appears above other elements */
-}
-
-.dropdown:hover .dropdown-content {
-  /* Show dropdown on hover */
-  display: block; 
-}
-
-.dropdown-content li {
-  list-style: none; /* Remove default list styling */
-}
-
-/* Dropdown Links Style */
-.dropdown-content a {
-  color: #333; /* Match the font color with other links */
-  text-decoration: none; /* Remove underline */
-  padding: 10px 20px; /* Padding for dropdown items */
-  display: block; /* Make the whole area clickable */
-}
-
-/* Hover Effect for Dropdown Links */
-.dropdown-content a:hover {
-  /* Background color on hover */
-  /* background-color: #007bff;  */
-  color: white; /* Change text color on hover */
-}
-#careerHeading {
-  font-size: 10rem; /* Increase heading size */
-  color: var(--text-color); /* Heading color */
-  margin-top: 20px; /* Spacing from the top */
-  margin-bottom: 40px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Text shadow for effect */
-}
-
-.job-card {
-  /* Pointer cursor for job cards */
-  cursor: pointer;
-  color: var(--text-color);
-  background-color: var(--background-color);
-  max-width: auto;
-}
-
-.job-card:hover {
-  background-color: #e9ecef; /* Change background on hover */
-}
-#jobList{
-  /* max-width: 17rem; */
-  display: flex;
-  align-items: center;
-}
-#jobTitle{
-  padding: 10px 0;
-  text-transform:uppercase ;
-}
-#jobInfo, #jobList {
-  margin-top: 20px; /* Spacing from job listings */
-  /* margin-left: 20px; */
-}
-.fade-out {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.fade-in {
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
-
-/* contact html */
-#contact{
-  margin-top: 100px;
-}
-.map-container {
-  overflow: hidden;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  position: relative;
-  height: 0;
-}
-
-.map-container .iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-h2, h4 {
-  color: var(--text-color);
-}
-
-.contact-detail li{
-  color: var(--text-color);
-  padding-bottom: 10px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px; /* Space between list items, adjust as needed */
-}
-.contact-detail i {
-  margin-right: 20px; /* Space between icon and text, adjust as needed */
-  font-size: 1.2rem; /* Adjust icon size if needed */
-}
-
-
-/* services page */
-/* Service section */
-#service h1{
-  margin-top: 100px;
-  font-size: 10rem;
-}
-.service {
-  opacity: 1;
-  transform: translateY(50px);
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-}
-.service h1{
-  font-size: 3rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--text-color);
-}
-.service h2{
-  font-size: 2rem;
-  color: var(--text-color);
-}
-.service p{
-  font-size: 1.2rem;  
-  color: var(--text-color);
-  text-align: justify;
-  
-}
-/* To animate the services as they scroll into view */
-.service.visible {
-  opacity: 0;
-  transform: translateY(0);
-}
-
-/* Service Image Styling */
-.service-img {
-  width: 100%;
-  max-width: 250px;
-}
-
-
-/* about page */
-/* Hero Section */
-.about-hero {
-  background-image: url('path_to_hero_image.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  text-align: center;
-  padding: 150px 0 10px 0;
-  color: var(--text-color);
-}
-
-.hero-content h1 {
-  font-size: 10rem;
-  margin-bottom: 10px;
-}
-
-.who-we-are, .timeline, .meet-the-team, .testimonials, .call-to-action {
-  padding: 50px 0;
-}
-
-.who-we-are h2, .timeline h2, .meet-the-team h2, .testimonials h2, .call-to-action h3 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-#mission-vision-values .card {
-  position: relative;
-  overflow: hidden;
-  height: 300px;
-  border: none;
-  background-color: transparent;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-#mission-vision-values .card:hover {
-  transform: scale(1.05); /* Scale up on hover */
-}
-
-#mission-vision-values .card-img {
-  width: auto;
-  max-height: 200px;
-  margin: 0 auto;
-  transition: opacity 0.3s ease;
-}
-
-#mission-vision-values .hover-text {
-  position: absolute;
-  bottom: 0; /* Position at the bottom */
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  padding: 40px;
-  flex-direction: column;
-  /* Align text to bottom */
-  justify-content: flex-end; 
-  align-items: center;
-  /* text-align: justify; */
-  /* Gradient background */
-  /* background: linear-gradient(to top, rgba(128, 0, 128, 0.8), rgba(128, 0, 128, 0.164)); */
-  background: var(--bg-gradient-background);
-  color: white;
-  opacity: 0; /* Start hidden */
-  transform: translateY(30px); /* Start below */
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for opacity and position */
-}
-
-#mission-vision-values .hover-card:hover .hover-text {
-  opacity: 1; /* Show text on hover */
-  transform: translateY(0); /* Slide up to original position */
-}
-
-#mission-vision-values .hover-card:hover .card-img {
-  opacity: 0.3; /* Fade image on hover */
-}
-
-#mission-vision-values h4 {
-  font-weight: bold;
-  margin-top: 15px;
-}
-
-
-
-.timeline-list {
-  list-style: none;
-  padding: 0;
-}
-
-.timeline-list li {
-  margin-bottom: 10px;
-  position: relative;
-  padding-left: 20px;
-  font-size: 1.2rem;
-}
-
-.timeline-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 5px;
-  height: 10px;
-  width: 10px;
-  background-color: rgb(128, 0, 128);
-  border-radius: 50%;
-}
-
-.team-member img {
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
-
-.carousel {
-  /* Add your carousel styles here */
-}
-
-
-#missionVisionValues {
-  position: relative;
-}
-
-.mission-card, .vision-card, .values-card {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.mission-card:hover, .vision-card:hover, .values-card:hover {
-  transform: scale(1.05);
-}
-
-.card-img {
-  width: 60%;
-  height: auto;
-  /* display: block; */
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Gradient background */
-  /* background: linear-gradient(to top, rgba(128, 0, 128, 0.8), rgba(128, 0, 128, 0));  */
-  /* background: var(--bg-gradient-background); */
-  background-color: var(--text-color);
-  color: white;
-  border-radius: 10px;
-  /* border-style:groove; */
-  opacity: 0;
-  padding: 40px;
-  display: flex;
-  align-items: center;
-  color: var(--background-color);
-  justify-content: center;
-  flex-direction: column;
-  transition: opacity 0.7s ease;
-}
-
-.mission-card:hover .overlay, 
-.vision-card:hover .overlay, 
-.values-card:hover .overlay {
-  opacity: 1;
-}
-
-.overlay h3 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-.overlay p {
-  margin-top: 5px;
-}
-
-
-
-.call-to-action {
-  background-color: rgba(128, 0, 128, 0.8);
-  color: white;
-}
-.call-to-action .btn{
-  background-color: rgba(128, 0, 128,);
-}
-/* Fade-in effect */
-.fade-in-section {
-  opacity: 1;
-  transform: translateY(20px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-  color: var(--text-color);
-}
-
-.fade-in-section.visible {
-  opacity: 0;
-  transform: translateY(0);
-}
-
-.button-54 {
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
-  letter-spacing: 2px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: rgb(128, 0, 128);
-  cursor: pointer;
-  border: 3px solid;
-  padding: 0.25em 0.5em;
-  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
-  position: relative;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.button-54:active {
-  box-shadow: 0px 0px 0px 0px;
-  top: 5px;
-  left: 5px;
-}
-
-@media (min-width: 768px) {
-  .button-54 {
-    padding: 0.25em 0.75em;
-  }
-}
-
-/* Parallax hero section */
-.about-hero {
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
-  transition: background-position 0.2s ease-out;
-}
-
-/* Team member hover effect */
-.team-member img {
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-
-
-
-
-
 /* Footer */
 /* first footer */
 .footer-main{
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition: all 0.3s ease;
+  background-color: var(--footer-background-color) !important;
+  color: var(--footer-text-color);
+  transition: all 0.7s ease;
+  align-items: center;
 }
 .footer-main img{
   max-width: auto;
   height: 8rem;
+}
+.footer-main p{
+  text-align: justify;
 }
 .footer-main ul li {
   margin-bottom: 0.5rem;
@@ -918,9 +552,9 @@ h2, h4 {
   padding-bottom: 10px;
 }
 .quick-links{
-  /* align-items: center; */
+  align-items: center;
   /* transform: translateX(30%); */
-  padding-left: 130px;
+  padding-left: 130px !important;
 
 }
 .quick-links h5{
@@ -929,14 +563,18 @@ h2, h4 {
 .quick-links li{
   width: 30%;
 }
+.footer-contact h5{
+  font-size: 1.5rem;
+}
 .footer-main ul li i {
-  color: var(--text-color);
+  color: var(--footer-text-color);
   margin-right: 10px;
 }
 
 .footer-main ul li a {
-  color: var(--text-color);
+  color: var(--footer-text-color);
   text-decoration: none;
+  font-family: 'Inter', sans-serif;
 }
 
 .footer-main ul li a:hover {
@@ -947,9 +585,12 @@ h2, h4 {
 
 
 
+
+
 /* second footer */
 .second-footer {
-  background-color: #343a40;
+  /* background-color: #343a40; */
+  background-color: rgb(128, 0, 128);
   color: white;
   padding: 20px 0 10px 0;
   position:static;
@@ -968,12 +609,16 @@ h2, h4 {
   }
   nav.navbar{
     transform: none;
-    width: 74%;
-    left: 1%;
+    width: 1005;
+    left: 5%;
     padding:5px 10px;
+    height: auto;
+  }
+  .navbar-collapse{
+    padding: 0 0 0 28rem;
   }
   .nav-links a{
-    padding: 0;
+    padding: 0 0 0 0;
   }
   #careerHeading{
     font-size: 190%;
@@ -983,11 +628,18 @@ h2, h4 {
     margin:0 0 30px 0;
   }
   .hero-section h1, p, a{
-    scale: 80%;
+    /* scale: 80%; */
 
   }
+  .footer-main p{
+    width: 285px;
+    font-size: 1rem;
+  }
+  .footer-main img{
+    height: 6rem;
+  }
   .quick-links{
-    padding: 0;
+    padding-left: 15px !important;
   }
   #service h1{
     font-size: 2.5rem;
@@ -1007,12 +659,16 @@ h2, h4 {
   }
   nav.navbar{
     transform: none;
-    width: 74%;
+    width: 100%;
     left: 1%;
-    padding:5px 10px;
+    padding:5px 15px;
+    height: auto;
   }
   .nav-links a{
     padding: 0;
+  }
+  .navbar-collapse{
+    padding: 0 0 0 20rem;
   }
   h1 {
       font-size: 2rem; /* Further reduce heading size */
