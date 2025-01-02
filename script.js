@@ -2,9 +2,9 @@
 window.onscroll = function() {
     var navbar = document.querySelector('nav.navbar');
     if (window.pageYOffset > 0) {
-      navbar.classList.add("sticky");
+      navbar.classList.add("navbar-shrink");
     } else {
-      navbar.classList.remove("sticky");
+      navbar.classList.remove("navbar-shrink");
     }
   };
 
@@ -95,12 +95,12 @@ document.addEventListener('DOMContentLoaded', function () {
         themeToggleBtn.checked = savedTheme === 'dark-theme'; // Set the slider position based on the saved theme
         
         // Change logo based on saved theme
-        logoimg.src = savedTheme === 'dark-theme' ? './logo/logo-white.png' : './logo/logo-black.png';
-        logoImg.src = savedTheme === 'dark-theme' ? './logo/logo-white.png' : './logo/logo-black.png';
+        logoimg.src = savedTheme === 'dark-theme' ? '/logo/logo-white.png' : '/logo/logo-black.png';
+        logoImg.src = savedTheme === 'dark-theme' ? '/logo/logo-white.png' : '/logo/logo-black.png';
     } else {
         document.body.classList.add('light-theme'); // Default to light theme if no preference is saved
-        logoimg.src = './logo/logo-black.png'; // Set default logo
-        logoImg.src = './logo/logo-black.png'; // Set default logo
+        logoimg.src = '/logo/logo-black.png'; // Set default logo
+        logoImg.src = '/logo/logo-black.png'; // Set default logo
     }
 }); 
     
@@ -109,14 +109,14 @@ themeToggleBtn.addEventListener('change', function () {
     if (this.checked) {
         document.body.classList.add('dark-theme');
         document.body.classList.remove('light-theme');
-        logoimg.src = './logo/logo-white.png'; // Change logo to dark theme
-        logoImg.src = './logo/logo-white.png'; // Change logo to dark theme
+        logoimg.src = '/logo/logo-white.png'; // Change logo to dark theme
+        logoImg.src = '/logo/logo-white.png'; // Change logo to dark theme
         localStorage.setItem('theme', 'dark-theme'); // Save the theme preference
     } else {
         document.body.classList.add('light-theme');
         document.body.classList.remove('dark-theme');
-        logoimg.src = './logo/logo-black.png'; // Change logo to light theme
-        logoImg.src = './logo/logo-black.png'; // Change logo to light theme
+        logoimg.src = '/logo/logo-black.png'; // Change logo to light theme
+        logoImg.src = '/logo/logo-black.png'; // Change logo to light theme
         localStorage.setItem('theme', 'light-theme');
     }
 });
@@ -399,34 +399,50 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 //About page
-// Parallax Effect
-window.addEventListener('scroll', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    // Parallax Effect
     const parallax = document.querySelector('.about-hero');
-    let scrollPosition = window.pageYOffset;
-    parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
-});
-
-// Hover Effect for Team Members
-const teamMembers = document.querySelectorAll('.team-member img');
-teamMembers.forEach(member => {
-    member.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.1)';
-        this.style.boxShadow = '0px 10px 20px rgba(0, 0, 0, 0.2)';
-    });
-    member.addEventListener('mouseleave', function() {
-        this.style.transform = 'scale(1)';
-        this.style.boxShadow = 'none';
-    });
-});
-
-// Smooth Scrolling
-const links = document.querySelectorAll('a[href^="#"]');
-for (let link of links) {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({
-            behavior: 'smooth'
+    if (parallax) {
+        window.addEventListener('scroll', function () {
+            let scrollPosition = window.pageYOffset;
+            parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
         });
-    });
-}
+    }
+
+    // Hover Effect for Team Members
+    const teamMembers = document.querySelectorAll('.team-member img');
+    if (teamMembers.length > 0) {
+        teamMembers.forEach(member => {
+            member.addEventListener('mouseenter', function () {
+                this.style.transform = 'scale(1.1)';
+                this.style.boxShadow = '0px 10px 20px rgba(0, 0, 0, 0.2)';
+            });
+            member.addEventListener('mouseleave', function () {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+    }
+
+    // Smooth Scrolling
+    const links = document.querySelectorAll('a[href^="#"]');
+    for (let link of links) {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+});
+
+
+
+
+
+
+
+

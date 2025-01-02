@@ -1,0 +1,107 @@
+/* career */
+
+.career-section{
+    /* position:absolute; */
+    margin-top: 160px;
+    margin-bottom: 30px;
+  }
+  .dropdown {
+    /* Position relative to parent */
+    position: relative;
+  }
+  
+  .dropdown-content {
+    /* Hide dropdown by default */
+    display: none;
+    position: absolute; /* Positioning below the dropdown link */
+    background-color: white; /* Background color of dropdown */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    z-index: 1; /* Ensure it appears above other elements */
+  }
+  
+  .dropdown:hover .dropdown-content {
+    /* Show dropdown on hover */
+    display: block; 
+  }
+  
+  .dropdown-content li {
+    list-style: none; /* Remove default list styling */
+  }
+  
+  /* Dropdown Links Style */
+  .dropdown-content a {
+    color: #333; /* Match the font color with other links */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Padding for dropdown items */
+    display: block; /* Make the whole area clickable */
+  }
+  
+  /* Hover Effect for Dropdown Links */
+  .dropdown-content a:hover {
+    /* Background color on hover */
+    /* background-color: #007bff;  */
+    color: white; /* Change text color on hover */
+  }
+  .career-hero{
+    background-image: url('images/Career.jpg'); 
+    background-size:contain;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.324);
+    background-blend-mode:darken;
+    text-align: center;
+    padding: 150px 0 10px 0;
+    color: white;
+  }
+  #careerHeading {
+    font-size: 10rem; /* Increase heading size */
+    /* color: var(--text-color); */
+    margin-top: 20px; /* Spacing from the top */
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    letter-spacing: 10px;
+    margin-bottom: 40px;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.412); /* Text shadow for effect */
+  }
+  
+  .job-card {
+    /* Pointer cursor for job cards */
+    cursor: pointer;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    max-width: auto;
+  }
+  
+  .job-card:hover {
+    background-color: #e9ecef; /* Change background on hover */
+  }
+  .jobList h3{
+    padding-left: 60px;
+  }
+  #jobList{
+    max-width: 17rem;
+    display: flex;
+    align-items: center;
+  }
+  #jobTitle{
+    padding: 10px 0;
+    text-transform:uppercase ;
+  }
+  #jobInfo{
+    margin-bottom: 50px;
+  }
+  #jobInfo, #jobList {
+    margin-top: 20px; /* Spacing from job listings */
+    /* margin-left: 20px; */
+  }
+  #jobInfo p{
+    text-align: justify;
+  }
+  .fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .fade-in {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }

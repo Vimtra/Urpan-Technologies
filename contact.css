@@ -1,0 +1,57 @@
+/* contact html */
+/* #contact{
+    margin-top: 100px;
+  } */
+   .contact{
+    background-image: url('images/Contact Us_1.jpg');
+    background-size:contain;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.324);
+    background-blend-mode:darken;
+    text-align: center;
+    padding: 150px 0 10px 0;
+  }
+  .contact h2{
+    color: white;
+    font-size: 150px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    letter-spacing: 10px;
+    margin-bottom: 10px;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.412); /* Text shadow for effect */
+   }
+  .map-container {
+    overflow: hidden;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    position: relative;
+    height: 0;
+  }
+  .cont{
+    opacity: 1;
+    transform: translateY(50px);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    padding-bottom: 100px;
+  }
+  .map-container .iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  h2, h4 {
+    color: var(--text-color);
+  }
+  
+  .contact-detail li{
+    color: var(--text-color);
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Space between list items, adjust as needed */
+  }
+  .contact-detail i {
+    margin-right: 20px; /* Space between icon and text, adjust as needed */
+    font-size: 1.2rem; /* Adjust icon size if needed */
+  }
