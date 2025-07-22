@@ -14,8 +14,8 @@
     --soft-box-shadow-color:0 0px 12px rgba(0, 0, 0, 0.15);
     --strong-bow-shadow-color: 0 0px 15px rgba(0, 0, 0, 0.2);
     --bg-gradient-background:linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(128, 0, 128, 0));
-    --footer-background-color:rgba(0, 0, 0, 0.123);
-    --footer-text-color:rgb(0, 0, 0);
+    --footer-background-color: #f8f9fa; /* Light background */
+    --footer-text-color: #000; /* Dark text */
 
   }
   
@@ -35,8 +35,8 @@
     --soft-box-shadow-color:0 0px 12px rgba(255, 255, 255, 0.568);
     --strong-bow-shadow-color: 0 0px 15px rgb(255, 255, 255);
     --bg-gradient-background:linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(128, 0, 128, 0));
-    --footer-background-color:rgba(71, 71, 71, 0.265);
-    --footer-text-color:rgb(255, 255, 255);
+    --footer-background-color: #343a40; /* Dark background */
+    --footer-text-color: #fff; /* Light text */
 
   }
   @font-face {
@@ -236,7 +236,7 @@ input:checked + .slider:before {
   position: relative;
   /* padding: 100px 0; */
   padding: 150px 0 0 0; /*Add more padding at the top to bring it down*/
-  background-image: url('path-to-your-parallax-background.jpg');
+  /* background-image: url('path-to-your-parallax-background.jpg'); */
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -535,7 +535,7 @@ input:checked + .slider:before {
 .footer-main{
   background-color: var(--footer-background-color) !important;
   color: var(--footer-text-color);
-  transition: all 0.7s ease;
+  transition: background-color 0.7s ease, color 0.7s ease;
   align-items: center;
 }
 .footer-main img{
@@ -609,16 +609,16 @@ input:checked + .slider:before {
   }
   nav.navbar{
     transform: none;
-    width: 1005;
-    left: 5%;
+    width: 100%; /* Corrected from 1005 */
+    left: 0; /* Changed from 5% */
     padding:5px 10px;
     height: auto;
   }
   .navbar-collapse{
-    padding: 0 0 0 28rem;
+    padding: 0; /* Removed excessive padding */
   }
   .nav-links a{
-    padding: 0 0 0 0;
+    padding: 0;
   }
   #careerHeading{
     font-size: 190%;
@@ -632,7 +632,7 @@ input:checked + .slider:before {
 
   }
   .footer-main p{
-    width: 285px;
+    width: auto; /* Changed from fixed width */
     font-size: 1rem;
   }
   .footer-main img{
@@ -660,7 +660,7 @@ input:checked + .slider:before {
   nav.navbar{
     transform: none;
     width: 100%;
-    left: 1%;
+    left: 0; /* Changed from 1% */
     padding:5px 15px;
     height: auto;
   }
@@ -668,7 +668,7 @@ input:checked + .slider:before {
     padding: 0;
   }
   .navbar-collapse{
-    padding: 0 0 0 20rem;
+    padding: 0; /* Removed excessive padding */
   }
   h1 {
       font-size: 2rem; /* Further reduce heading size */
@@ -685,7 +685,7 @@ input:checked + .slider:before {
 
   /* Service Card */
   #service{
-    width: 430px;
+    width: 100%; /* Changed from fixed width */
   }
   .service {
       padding: 10px 0; /* Add some padding for better spacing on mobile */
@@ -706,5 +706,10 @@ input:checked + .slider:before {
   }
   .order-md-1 {
       order: 2;
+  }
+
+  .hero-image {
+    max-width: 100%; /* Ensure image fits within its container */
+    transform: translateX(0); /* Remove horizontal transform on small screens */
   }
 }
