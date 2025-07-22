@@ -20,6 +20,36 @@
     margin-bottom: 10px;
     text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.412); /* Text shadow for effect */
    }
+   .cont p{
+    text-align: justify;
+   }
+
+  @media (max-width: 768px) {
+    .contact h2 {
+      font-size: 60px;
+      letter-spacing: 5px;
+      margin-bottom: 10px;
+    }
+    .contact {
+      background-attachment: scroll;
+      padding: 100px 0 10px 0;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .contact h2 {
+      font-size: 40px;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+    .contact {
+      padding: 80px 0 10px 0;
+    }
+       /* .cont p{
+    text-align: justify;
+   } */
+  }
+  
   .map-container {
     overflow: hidden;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */

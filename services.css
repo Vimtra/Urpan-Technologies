@@ -7,7 +7,7 @@
   } */
    .services{
     background-image: url('images/Our Services.jpeg');
-    background-size:contain;
+    background-size:190%;
     background-attachment: fixed;
     background-color: rgba(0, 0, 0, 0.324);
     background-blend-mode:darken;

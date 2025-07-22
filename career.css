@@ -62,6 +62,34 @@
     margin-bottom: 40px;
     text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.412); /* Text shadow for effect */
   }
+
+  @media (max-width: 768px) {
+    #careerHeading {
+      font-size: 5rem;
+      letter-spacing: 5px;
+      margin-bottom: 20px;
+    }
+    .career-hero {
+      background-attachment: scroll;
+      padding: 100px 0 10px 0;
+    }
+    #jobList {
+      max-width: 100%;
+      display: block;
+    }
+  }
+
+  @media (max-width: 576px) {
+    #careerHeading {
+      font-size: 3rem;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+    .career-hero {
+      padding: 80px 0 10px 0;
+    }
+  }
+  
   
   .job-card {
     /* Pointer cursor for job cards */
