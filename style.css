@@ -3,7 +3,7 @@
     /* Light Theme Colors */
     --background-color: #ffffff;
     --text-color: #333333;
-    --navbar-bg-color: rgba(255, 255, 255, 0.8);
+    --navbar-bg-color: rgba(182 182 182 / 80%);
     --navbar-text-color: #0c0c0c;
     --navbar-hover-color: rgba(128, 0, 128, 0.8);
     --box-shadow-color: rgba(0, 0, 0, 0.2);
@@ -14,6 +14,7 @@
     --soft-box-shadow-color:0 0px 12px rgba(0, 0, 0, 0.15);
     --strong-bow-shadow-color: 0 0px 15px rgba(0, 0, 0, 0.2);
     --bg-gradient-background:linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(128, 0, 128, 0));
+    --purple-gradient-background:linear-gradient(135deg, #f3e6ff 0%, #e0bbff 20%, #c299fc 40%, #b084cc 60%, #a084ca 80%, #6c3483 100%);
     --footer-background-color: #f8f9fa; /* Light background */
     --footer-text-color: #000; /* Dark text */
 
@@ -35,6 +36,7 @@
     --soft-box-shadow-color:0 0px 12px rgba(255, 255, 255, 0.568);
     --strong-bow-shadow-color: 0 0px 15px rgb(255, 255, 255);
     --bg-gradient-background:linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(128, 0, 128, 0));
+    --purple-gradient-background:linear-gradient(135deg, #2d0036 0%, #4b006e 20%, #6a0572 40%, #8f2ba7 60%, #a259c1 80%, #c084fc 100%);
     --footer-background-color: #343a40; /* Dark background */
     --footer-text-color: #fff; /* Light text */
 
@@ -68,8 +70,13 @@
   width: auto; /* Keep the aspect ratio intact */
   transition: all 0.3s ease-in-out;
 }
-nav.navbar {
+
+nav{
     background-color: var(--navbar-bg-color);
+
+}
+nav.navbar {
+    /* background-color: var(--navbar-bg-color); */
     padding: 15px 30px;
     position: fixed; /* Fixed at the top */
     top: 20px; /* Floating effect */
@@ -254,7 +261,7 @@ input:checked + .slider:before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6); /* Overlay for better text visibility */
+  /* background: rgba(0, 0, 0, 0.6); */
   z-index: -1;
 }
 
