@@ -126,16 +126,102 @@
 
 
 
-<section class="timeline">
-  <div class="container">
-      <h2 data-aos="fade-up">Our Journey</h2>
-      <ul class="timeline-list">
-          <li data-aos="fade-right">2022 - Founded with a mission to revolutionize IT services.</li>
-          <li data-aos="fade-right" data-aos-delay="100">2023 - Expanded services globally.</li>
-          <li data-aos="fade-right" data-aos-delay="200">2024 - Recognized as a top consulting firm.</li>
-      </ul>
-  </div>
-</section>
+  <section class="timeline" data-aos="fade-up">
+    <div class="container timeline-container">
+      <h2>Our Journey</h2>
+      <div class="timeline-line"></div>
+
+      <div class="timeline-item left" data-aos="fade-right" data-aos-delay="100">
+        <div class="timeline-circle"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2000</div>
+          <div>Founded</div>
+        </div>
+      </div>
+
+      <div class="timeline-item right" data-aos="fade-left" data-aos-delay="200">
+        <div class="timeline-circle"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2002</div>
+          <div>Start Operations</div>
+        </div>
+      </div>
+
+      <div class="timeline-item left" data-aos="fade-right" data-aos-delay="300">
+        <div class="timeline-circle"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2006</div>
+          <div>Venture into Exec Search</div>
+        </div>
+      </div>
+
+      <div class="timeline-item right" data-aos="fade-left" data-aos-delay="400">
+        <div class="timeline-circle"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2009</div>
+          <div>Venture into Mgt Consulting Searches</div>
+        </div>
+      </div>
+
+      <div class="timeline-item left" data-aos="fade-right" data-aos-delay="500">
+        <div class="timeline-circle"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2011</div>
+          <div>
+            Started Placing Recruiters in market (Placed at Fortune 500 Companies)
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item right" data-aos="fade-left" data-aos-delay="600">
+        <div class="timeline-circle"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2011</div>
+          <div>Opened India Office; Acquire E Verified Status</div>
+        </div>
+      </div>
+
+      <div class="timeline-item left" data-aos="fade-right" data-aos-delay="700">
+        <div class="timeline-circle"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2011</div>
+          <div>Acquire MBE status; Acquire CA Small Business Status</div>
+        </div>
+      </div>
+
+      <div class="timeline-item right" data-aos="fade-left" data-aos-delay="800">
+        <div class="timeline-circle"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2011</div>
+          <div>Named Best in recruiting and Staffing Firm in Sunnyvale by SBA</div>
+        </div>
+      </div>
+
+      <div class="timeline-item left" data-aos="fade-right" data-aos-delay="900">
+        <div class="timeline-circle"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2011</div>
+          <div>Named in Si100, Top 100, in Top 20 IT services firms (3rd time)</div>
+        </div>
+      </div>
+
+      <div class="timeline-item right" data-aos="fade-left" data-aos-delay="1000">
+        <div class="timeline-circle"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2012</div>
+          <div>Opened UrpanTech Canada; Certified DBE by VTA state Govt.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item left" data-aos="fade-right" data-aos-delay="1100">
+        <div class="timeline-circle"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2012</div>
+          <div>CA; Hired 50th Recruiter in UrpanTech</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 <!-- New Content Sections Start Here -->
 <section class="new-section">
@@ -635,6 +721,13 @@
     /* .hero-content {
       padding: 80px 0 10px 0;
     } */
+     
+  }
+  @media (max-width: 329px){
+          .track-record-section img {
+        width: 90%;
+        height: 100px;
+      }
   }
   
   /* Parallax hero section */
@@ -818,6 +911,158 @@ background-color: var(--background-color);
   color: #a855f7;
 }
 
+
+    /* Timeline Styles */
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+      background: var(--background-color);
+    }
+    .timeline h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--text-color);
+      font-weight: 700;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .timeline-container {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    /* Vertical line */
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(128, 0, 128, 0.8),
+        rgba(244, 114, 182, 0.8)
+      );
+      border-radius: 2px;
+      z-index: 1;
+    }
+    /* Timeline item */
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 1rem 2rem;
+      box-sizing: border-box;
+      z-index: 2;
+    }
+    /* Left side */
+    .timeline-item.left {
+      left: 0;
+      text-align: right;
+      animation: slideInLeft 1s ease forwards;
+    }
+    /* Right side */
+    .timeline-item.right {
+      left: 50%;
+      text-align: left;
+      animation: slideInRight 1s ease forwards;
+    }
+    /* Timeline content */
+    .timeline-content {
+      background: linear-gradient(
+        135deg,
+        rgba(168, 85, 247, 0.8),
+        rgba(244, 114, 182, 0.8)
+      );
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .timeline-content:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(244, 114, 182, 0.9);
+    }
+    /* Timeline circle */
+    .timeline-circle {
+      position: absolute;
+      top: 1.5rem;
+      width: 20px;
+      height: 20px;
+      background: #800080;
+      border-radius: 50%;
+      border: 4px solid #f472b6;
+      box-shadow: 0 0 10px #a855f7;
+      animation: pulseGlow 2s infinite;
+      z-index: 3;
+    }
+    /* Circle position left */
+    .timeline-item.left .timeline-circle {
+      right: -12px;
+    }
+    /* Circle position right */
+    .timeline-item.right .timeline-circle {
+      left: -12px;
+    }
+    /* Year styling */
+    .timeline-year {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+      text-shadow: 0 0 5px #a855f7;
+    }
+    /* Animations */
+    @keyframes slideInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes slideInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes pulseGlow {
+      0%,
+      100% {
+        box-shadow: 0 0 10px #a855f7, 0 0 20px #f472b6;
+      }
+      50% {
+        box-shadow: 0 0 20px #f472b6, 0 0 30px #a855f7;
+      }
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .timeline-item {
+        width: 100%;
+        padding-left: 3rem;
+        padding-right: 1rem;
+        text-align: left !important;
+      }
+      .timeline-item.left,
+      .timeline-item.right {
+        left: 0 !important;
+      }
+      .timeline-circle {
+        left: -12px !important;
+        right: auto !important;
+      }
+      .timeline-line {
+        left: 20px !important;
+      }
+    }
     </style>
   </body>
 </html>

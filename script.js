@@ -171,14 +171,14 @@ function init() {
 }
 
 // Animation loop
-function animate() {
-    requestAnimationFrame(animate);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+// function animate() {
+//     requestAnimationFrame(animate);
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    particlesArray.forEach((particle) => {
-        particle.update();
-    });
-}
+//     particlesArray.forEach((particle) => {
+//         particle.update();
+//     });
+// }
 
 // Mouse interactivity
 let mouse = {
@@ -194,14 +194,14 @@ window.addEventListener('mousemove', (event) => {
 
 // Connect particles to mouse
 function connect() {
-    let opacityValue = 1;
+    let _opacityValue = 1;
     for (let a = 0; a < particlesArray.length; a++) {
         for (let b = a; b < particlesArray.length; b++) {
             let distance =
                 (particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x) +
                 (particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y);
             if (distance < (canvas.width / 7) * (canvas.height / 7)) {
-                opacityValue = 1 - distance / 20000;
+                _opacityValue = 1 - distance / 20000;
                 ctx.strokeStyle = getParticleColor(); // Use theme color
                 ctx.lineWidth = 1;
                 ctx.beginPath();

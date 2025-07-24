@@ -227,3 +227,139 @@ document.addEventListener('DOMContentLoaded', () => {
         showJobDetails(jobId); // Show job details if job ID exists in the URL
     }
 });
+
+      // Modal elements
+      const applicationModal = new bootstrap.Modal(document.getElementById('applicationModal'));
+      const applicationForm = document.getElementById('applicationForm');
+      const jobTitleDisplay = document.getElementById('jobTitleDisplay');
+      const jobTitleHidden = document.getElementById('jobTitleHidden');
+      const applicantName = document.getElementById('applicantName');
+      const applicantEmail = document.getElementById('applicantEmail');
+      const applicantPhone = document.getElementById('applicantPhone');
+      const resumeFile = document.getElementById('resumeFile');
+      const thankYouMessage = document.getElementById('thankYouMessage');
+
+      // Function to populate job listings
+      function populateJobListings() {
+        jobListDiv.innerHTML = ''; // Clear existing listings
+        jobListings.forEach(job => {
+          const jobCard = document.createElement('a');
+          jobCard.href = '#';
+          jobCard.classList.add('list-group-item', 'list-group-item-action', 'job-card');
+          jobCard.dataset.jobId = job.id;
+          jobCard.innerHTML = `
+            <h5 class="mb-1">${job.title}</h5>
+          `; // Only job title
+          jobListDiv.appendChild(jobCard);
+        });
+      }
+
+      // Function to display job details
+      function displayJobDetails(job) {
+        jobTitleElement.textContent = job.title;
+        postedDateElement.textContent = job.postedDate;
+        salaryElement.textContent = job.salary;
+        workingHoursElement.textContent = job.workingHours;
+        openingsElement.textContent = job.openings;
+        experienceElement.textContent = job.experience;
+        educationElement.textContent = job.education;
+        jobDutiesElement.textContent = job.jobDuties;
+      }
+
+      // Event listener for job card clicks
+      jobListDiv.addEventListener('click', (event) => {
+        const jobCard = event.target.closest('.job-card');
+        if (jobCard) {
+          const jobId = jobCard.dataset.jobId;
+          const selectedJob = jobListings.find(job => job.id === jobId);
+          if (selectedJob) {
+            displayJobDetails(selectedJob);
+          }
+        }
+      });
+
+      // Event listener for Apply Now button click
+      applyNowBtn.addEventListener('click', () => {
+        const currentJobTitle = jobTitleElement.textContent;
+        if (currentJobTitle) {
+          jobTitleDisplay.value = currentJobTitle; // Display in modal
+          jobTitleHidden.value = currentJobTitle; // Send with form
+          applicationForm.classList.remove('d-none'); // Ensure form is visible
+          thankYouMessage.classList.add('d-none'); // Ensure thank you message is hidden
+          applicationModal.show(); // Show the modal
+        } else {
+          // Handle case where no job is selected
+          // Using a custom message box instead of alert()
+          const customAlertModal = new bootstrap.Modal(document.getElementById('customAlertModal'));
+          document.getElementById('customAlertModalBody').textContent = 'Please select a job from the listings first.';
+          customAlertModal.show();
+        }
+      });
+
+      // Function to reset form and close modal
+      function resetFormAndCloseModal() {
+        applicationForm.reset();
+        // Hide form and show thank you message
+        applicationForm.classList.add('d-none');
+        thankYouMessage.classList.remove('d-none');
+
+        // Automatically close modal after 3 seconds
+        setTimeout(() => {
+          applicationModal.hide();
+          // Reset modal content to show form for next time
+          applicationForm.classList.remove('d-none');
+          thankYouMessage.classList.add('d-none');
+        }, 3000);
+      }
+
+      // Event listener for form submission
+      applicationForm.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Prevent default form submission
+
+        // Basic validation
+        if (!applicantName.value || !applicantEmail.value || !applicantPhone.value || !resumeFile.files.length) {
+          const customAlertModal = new bootstrap.Modal(document.getElementById('customAlertModal'));
+          document.getElementById('customAlertModalBody').textContent = 'Please fill in all required fields and upload your resume.';
+          customAlertModal.show();
+          return;
+        }
+
+        const formData = new FormData(applicationForm);
+        const formspreeUrl = applicationForm.action; // Get Formspree URL from form's action attribute
+
+        console.log('Attempting to submit form to:', formspreeUrl); // Log the URL for debugging
+
+        try {
+          const response = await fetch(formspreeUrl, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json' // Important for Formspree
+            }
+          });
+
+          if (response.ok) {
+            resetFormAndCloseModal(); // Show thank you message and close modal
+          } else {
+            const data = await response.json();
+            const customAlertModal = new bootstrap.Modal(document.getElementById('customAlertModal'));
+            if (data.errors) {
+              document.getElementById('customAlertModalBody').textContent = 'Form submission failed: ' + data.errors.map(e => e.message).join(', ');
+            } else {
+              document.getElementById('customAlertModalBody').textContent = 'Form submission failed. Please try again.';
+            }
+            customAlertModal.show();
+          }
+        } catch (error) {
+          console.error('Error submitting form:', error);
+          const customAlertModal = new bootstrap.Modal(document.getElementById('customAlertModal'));
+          document.getElementById('customAlertModalBody').textContent = 'An error occurred while submitting your application. Please try again later.';
+          customAlertModal.show();
+        }
+      });
+
+      // Initial population of job listings and display first job details
+      populateJobListings();
+      if (jobListings.length > 0) {
+        displayJobDetails(jobListings[0]);
+      };
