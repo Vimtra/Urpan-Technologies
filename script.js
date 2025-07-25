@@ -261,3 +261,92 @@ document.addEventListener('DOMContentLoaded', function () {
 
     services.forEach((service) => observer.observe(service));
 });
+
+
+        (function() {
+            const canvas = document.getElementById('sparkCanvas');
+            const container = document.getElementById('clickContainer');
+            const ctx = canvas.getContext('2d');
+
+            // Configuration
+            const sparkColor = '#fff';
+            const sparkSize = 10;
+            const sparkRadius = 15;
+            const sparkCount = 8;
+            const duration = 400; // ms
+            const easing = 'ease-out';
+            const extraScale = 1.0;
+
+            let sparks = [];
+
+            // Resize canvas to container size
+            function resizeCanvas() {
+                const rect = container.getBoundingClientRect();
+                canvas.width = rect.width;
+                canvas.height = rect.height;
+            }
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            // Easing functions
+            function easeFunc(t) {
+                switch (easing) {
+                    case 'linear': return t;
+                    case 'ease-in': return t * t;
+                    case 'ease-in-out': return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+                    default: return t * (2 - t); // ease-out
+                }
+            }
+
+            // Draw sparks
+            function draw(timestamp) {
+                if (!draw.startTime) draw.startTime = timestamp;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                sparks = sparks.filter(spark => {
+                    const elapsed = timestamp - spark.startTime;
+                    if (elapsed >= duration) return false;
+
+                    const progress = elapsed / duration;
+                    const eased = easeFunc(progress);
+
+                    const distance = eased * sparkRadius * extraScale;
+                    const lineLength = sparkSize * (1 - eased);
+
+                    const x1 = spark.x + distance * Math.cos(spark.angle);
+                    const y1 = spark.y + distance * Math.sin(spark.angle);
+                    const x2 = spark.x + (distance + lineLength) * Math.cos(spark.angle);
+                    const y2 = spark.y + (distance + lineLength) * Math.sin(spark.angle);
+
+                    ctx.strokeStyle = sparkColor;
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    ctx.moveTo(x1, y1);
+                    ctx.lineTo(x2, y2);
+                    ctx.stroke();
+
+                    return true;
+                });
+
+                requestAnimationFrame(draw);
+            }
+
+            requestAnimationFrame(draw);
+
+            // Handle click event
+            container.addEventListener('click', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const now = performance.now();
+
+                for (let i = 0; i < sparkCount; i++) {
+                    sparks.push({
+                        x,
+                        y,
+                        angle: (2 * Math.PI * i) / sparkCount,
+                        startTime: now
+                    });
+                }
+            });
+        })();
