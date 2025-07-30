@@ -96,6 +96,14 @@ document.addEventListener('mousemove', (e) => {
     });
 });
 
+// Initialize AOS (Animate On Scroll)
+AOS.init({
+  duration: 800,
+  easing: 'ease-in-out',
+  once: true,
+  mirror: false
+});
+
 // Particle effect (Canvas)
 const canvas = document.getElementById('particleCanvas');
 const ctx = canvas.getContext('2d');

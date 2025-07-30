@@ -18,12 +18,13 @@
 <body>
 
   <!-- Header with Logo and Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand" href="./index.html">
-        <img src="./logo/logo-black.png" alt="Logo" class="logo" id="logo" />
+        <img src="./logo/logo-black.png" alt="Logo" class="logo" id="logo">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -32,34 +33,24 @@
             <a class="nav-link" href="./index.html">Home</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="./about.html">About Us</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="./services.html">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <label for="Jobs">
-              <a class="nav-link " href="./career.html">
-                  Career
-              </a>
-              <!-- <ul class="dropdown-menu" id="dropdownMenu" aria-labelledby="careerDropdown"> -->
-                  <!-- Dropdown items will be populated here -->
-              <!-- </ul> -->
-            </label>
+            <a class="nav-link" href="./career.html">Career</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./contact.html">Contact</a>
           </li>
-          <!-- Theme Switch Button -->
-          <!-- <button id="themeToggle" class="btn btn-outline-light ms-3">Dark Mode</button> -->
-          <!-- <div class="theme-toggle"> -->
-            <li class="themeToggle">
-                <label class="switch">
-                <input type="checkbox" id="themeToggle">
-                <span class="slider"></span>
-                </label>
-            </li>
-          <!-- </div> -->
+          <!-- Theme Switch -->
+          <!-- <li class="themeToggle ms-3">
+            <label class="switch">
+              <input type="checkbox" id="themeToggle">
+              <span class="slider"></span>
+            </label>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -80,14 +71,14 @@
             <div class="col-md-9">
                 <h3 class="text-center">Job Details</h3>
                 <div id="jobInfo">
-                    <h4 id="jobTitle"></h4>
-                    <p><strong style="font-size: 20px;">Posted Date:</strong> <span id="postedDate"></span></p>
-                    <p><strong style="font-size: 20px;">Salary:</strong> <span id="salary"></span></p>
-                    <p><strong style="font-size: 20px;">Working Hours:</strong> <span id="workingHours"></span></p>
-                    <p><strong style="font-size: 20px;">No. of Openings</strong> <span id="openings"></span></p>
-                    <p><strong style="font-size: 20px;">Experience:</strong> <span id="experience"></span></p>
-                    <p><strong style="font-size: 20px;">Qualifications:</strong> <span id="education"></span></p>
-                    <p><strong style="font-size: 20px;">Job Duties:</strong> <span id="jobDuties"></span></p>
+                    <h4> JOB: <span id="jobTitle">Application Security Engineer</span></h4>
+                    <p><strong style="font-size: 20px;">Posted Date:</strong> <span id="postedDate">09/03/2024</span></p>
+                    <p><strong style="font-size: 20px;">Salary:</strong> <span id="salary">'$184,579.00' per year</span></p>
+                    <p><strong style="font-size: 20px;">Working Hours:</strong> <span id="workingHours">Fulltime job, 40 hours per week</span></p>
+                    <p><strong style="font-size: 20px;">No. of Openings</strong> <span id="openings">5</span></p>
+                    <p><strong style="font-size: 20px;">Experience:</strong> <span id="experience">Experience of Six (6) Months should include working with Security Testing/Analysis of Cloud Based Networks /Applications (Either Azure or AWS or Google Cloud) is required. Travel and/or relocation is required to unanticipated client sites within USA. International travel is not required. The frequency of travel is currently not known as it depends on the client and project requirement that cannot be currently anticipated. Employer provides Information technology services to various clients in USA and hence implementing projects will require such travel.</span></p>
+                    <p><strong style="font-size: 20px;">Qualifications:</strong> <span id="education">Master’s  degree in Computer Science, Computer Engineering, Information Technology, Engineering(Any) or closely related field with Six (6) months of experience in the job offered or as an IT Consultant or Security Analyst or Engineer or Programmer or Developer or very closely related area. Employer also accepts Bachelor’s  degree in Computer Science, Computer Engineering, Information Technology, Engineering(Any) or closely related field plus five years of progressive work experience in related field.</span></p>
+                    <p><strong style="font-size: 20px;">Job Duties:</strong> <span id="jobDuties">Plan, implement, upgrade, or monitor security measures for the protection of computer networks and information. Ensure appropriate security controls are in place that will safeguard various cloud based (such as Azure, AWS or Google Cloud) IT applications. Interact with developers on providing solutions to flaws or vulnerabilities in applications. Install maintain, or repair security systems and continue to recommend improvements in security systems or procedures, perform risk analyses so that appropriate countermeasures can be developed. Keep updated with latest security techniques and implement latest security techniques to protect various Cloud based software applications. Work under Supervision. Travel And/or Relocation to Unanticipated Client Sites throughout USA is required.</span></p>
                     <!-- <input type="file" id="resumeUpload" /> -->
                     <button class="btn apply-now-btn mt-3" data-bs-toggle="modal" data-bs-target="#applicationModal">Apply Now</button>
                 </div>
