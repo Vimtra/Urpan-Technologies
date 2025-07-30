@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             jobduties: 'Develop, create and modify general computer applications software or specialized utility programs using Java, J2EE, SPRING, HIBERNATE and related JAVA frameworks using those programming languages. Utilize SQL server or Oracle server database servers along with front-end programming languages. Analyze user needs and develop software solutions. Design software or customize software for client use with the aim of optimizing operational efficiency. Work under supervision. Travel And/or Relocation to Unanticipated Client Sites throughout USA is required.'
         },
         6: {
-            title: 'Systems Analyst',
+            title: 'Systems Analyst - DATA POWER',
             date: '09/03/2024',
             salary: "$168,397.00 per year",
             hours: 'Fulltime job, 40 hours per week',
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
             jobduties: 'Analyze science, engineering, business and other data processing problems to implement and improve computer systems using DataPower, API Connect and related frameworks using those programming languages. Utilize EDI, ESQL, Web Services along with OAuth2.0, Security Policies. Analyze user needs and implement integration solutions using IBM DataPower and IBM API Connect. Support administration of API Connect and DataPower appliances. Work under supervision. Travel And/or Relocation to Unanticipated Client Sites throughout USA is required.'
         },
         7: {
-            title: 'Systems Analyst',
+            title: 'Systems Analyst - JAVA, J2EE',
             date: '09/03/2024',
             salary: "$168,397.00 per year",
             hours: 'Fulltime job, 40 hours per week',
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             jobduties: 'Analyze science, engineering, business, and other data processing problems to implement and improve computer systems using Java based technology. Analyze user requirements, procedures, and problems to automate or improve existing systems and review computer system capabilities by using Java and Java based frameworks, SPRING, J2EE, Java Script and Oracle server backend databases. Work under Supervision. Travel And/or Relocation to Unanticipated Client Sites throughout USA is required.'
         },
         8: {
-            title: 'Systems Analyst',
+            title: 'Systems Analyst - Oracle Applications',
             date: '09/03/2024',
             salary: "$168,397.00 per year",
             hours: 'Fulltime job, 40 hours per week',
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
             jobduties: 'Analyze science, engineering, business, and other data processing problems to implement and improve computer systems using Oracle Applications and various Oracle Apps modules. Analyze user requirements, procedures, and problems to automate or improve existing systems and review computer system capabilities, with a goal to minimize risk of defaulting of payments using Oracle OM and AR modules for order management and accounts receivables modules to analyze and minimize risk of business enterprises. Analyze and recommend effective tools for Order Management, Cash Processing, Customer data processing, customer risk analysis using Oracle Applications. Work under supervision. Travel And/or Relocation to Unanticipated Client Sites throughout USA is required.'
         },
         9: {
-            title: 'Systems Analyst',
+            title: 'Systems Analyst - Software Quality Testing',
             date: '09/03/2024',
             salary: "$168,397.00 per year",
             hours: 'Fulltime job, 40 hours per week',
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             jobduties: 'Analyze Science, Engineering, Business and other data processing problems to implement and improve computer systems by utilizing various software testing methodologies. Work with Unit testing using Junit, utilize SQL skills to analyze the computer systems, utilize quality assurance methodologies and QA automation tools such as Selenium, mobile testing tools, use SOAP UI to test web services, perform middleware testing and create automation test frameworks. Work under supervision. Travel And/or Relocation to Unanticipated Client Sites throughout USA is required.'
         },
         10: {
-            title: 'Systems Analyst',
+            title: 'Systems Analyst - Informatica',
             date: '09/03/2024',
             salary: "$168,397.00 per year",
             hours: 'Fulltime job, 40 hours per week',
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
             jobduties: 'Analyze science, engineering, business, and other data processing problems to implement and improve computer systems. Analyze user requirements, procedures, and problems to automate or improve existing systems and review computer system capabilities, workflow, and scheduling limitations using ETL concepts using INFORMATICA and SQL TOOLS. Work under supervision. Travel And/or Relocation to Unanticipated Client Sites throughout USA is required.'
         },
         11: {
-            title: 'Systems Analyst',
+            title: 'Systems Analyst - Qilkview, Qliksense',
             date: '09/03/2024',
             salary: "$168,397.00 per year",
             hours: 'Fulltime job, 40 hours per week',
