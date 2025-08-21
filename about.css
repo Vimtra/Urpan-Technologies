@@ -4,7 +4,7 @@
     background-image: url('images/abstract-networking-concept-still-life-arrangement.jpg');
     background-size: cover;
     background-attachment: fixed;
-    background-color: rgba(0, 0, 0, 0.324);
+    background-color: var(--background-color);
     background-blend-mode:darken;
     text-align: center;
     padding: 150px 0 10px 0;
@@ -22,6 +22,7 @@
   
   .who-we-are, .timeline, .meet-the-team, .testimonials, .call-to-action {
     padding: 50px 0;
+    background-color: var(--background-color);
   }
   
   .who-we-are h2, .timeline h2, .meet-the-team h2, .testimonials h2, .call-to-action h3 {
@@ -257,3 +258,168 @@
   .team-member img {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
+
+/* New content sections improvements */
+.new-section{
+  /*create a four coloured purple gradient*/
+  background: linear-gradient(135deg, #f3e6ff 0%, #e0bbff 20%, #c299fc 40%, #b084cc 60%, #a084ca 80%, #6c3483 100%);
+}
+/* Core Cultural Values Section */
+.core-values-section {
+  /* background-color: var(--background-color); */
+  /* border-radius: 12px; */
+  /* box-shadow: 0 20px 15px rgba(128, 0, 128, 0.2); */
+  padding: 40px 20px;
+  margin-bottom: 50px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.core-values-section h2 {
+  color: rgb(128, 0, 128);
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.core-values-section p {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 25px;
+}
+
+/* .core-values-section ul.list-group {
+background-color: var(--background-color);
+} */
+.core-values-section ul.list-item {
+  font-size: 1.1rem;
+  /* background-color: var(--background-color); */
+  color: var(--text-color);
+  padding: 2px 15px;
+  border: none;
+  text-align: left;
+  /* border-bottom: 1px solid #ddd; */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: default;
+}
+
+.core-values-section ul.list-item:last-child {
+  border-bottom: none;
+}
+
+.core-values-section ul.list-item:hover,
+.core-values-section ul.list-item:focus {
+  background-color: rgb(128, 0, 128);
+  color: white;
+  outline: none;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(128, 0, 128, 0.6);
+}
+
+/* Sectors We Serve Section */
+.sectors-serve-section {
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(128, 0, 128, 0.15);
+  padding: 40px 20px;
+  margin-bottom: 50px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sectors-serve-section h2 {
+  color: rgb(128, 0, 128);
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sectors-serve-section p {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 25px;
+}
+
+.sectors-serve-section ul.sectors-list li {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  padding: 8px 0;
+  transition: color 0.3s ease;
+  cursor: default;
+}
+
+.sectors-serve-section ul.sectors-list li:hover,
+.sectors-serve-section ul.sectors-list li:focus {
+  color: rgb(128, 0, 128);
+  outline: none;
+}
+
+/* Certifications Section */
+.certifications-section {
+  /* background-color: var(--background-color); */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(128, 0, 128, 0.2);
+  padding: 40px 20px;
+  margin-bottom: 50px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certifications-section h2 {
+  color: var(--text-color);
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.certification-card {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.certification-card:hover,
+.certification-card:focus {
+  transform: translateY(-10px);
+  box-shadow: 0 0px 20px rgba(128, 0, 128, 0.4);
+  outline: none;
+}
+
+.certification-card img {
+  max-width: 150px;
+  max-height: 150px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid rgb(128, 0, 128);
+}
+
+/* Dark theme styles for new content sections */
+.dark-theme-section.core-values-section,
+.dark-theme-section.sectors-serve-section,
+.dark-theme-section.certifications-section {
+  background-color: #2c2c2c;
+  /* box-shadow: 0 4px 15px rgba(200, 100, 200, 0.6); */
+}
+
+.dark-theme-section.core-values-section h2,
+.dark-theme-section.sectors-serve-section h2,
+.dark-theme-section.certifications-section h2 {
+  color: #d8b4ff;
+}
+
+.dark-theme-section.core-values-section p,
+.dark-theme-section.sectors-serve-section p,
+.dark-theme-section.certifications-section p,
+.dark-theme-section.core-values-section ul.list-group-item,
+.dark-theme-section.sectors-serve-section ul.sectors-list li {
+  color: #ccc;
+}
+
+.dark-theme-section.core-values-section ul.list-group-item:hover,
+.dark-theme-section.core-values-section ul.list-group-item:focus {
+  background-color: #a855f7;
+  color: white;
+  box-shadow: 0 0 8px #a855f7;
+}
+
+.dark-theme-section.sectors-serve-section ul.sectors-list li:hover,
+.dark-theme-section.sectors-serve-section ul.sectors-list li:focus {
+  color: #a855f7;
+}
